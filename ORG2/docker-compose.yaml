@@ -21,7 +21,7 @@ services:
       - CORE_PEER_GOSSIP_ORGLEADER=false
       - CORE_PEER_PROFILE_ENABLED=true
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb0:5984
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb2:5984
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
     depends_on:
@@ -32,8 +32,8 @@ services:
       - /var/run/:/host/var/run/
       - ./crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/msp:/etc/hyperledger/fabric/msp
     # extra_hosts:
-    #- "orderer.example.com:<1st Machines IP>"
-    #- "ca.example.com:<1st Machines IP>"
+    # - "orderer.example.com:<IP of ORG-1 Machine>"
+    # - "ca.example.com:<IP of ORG-1 Machine>"
     ports:
       - 9051:7051
       - 9053:7053      
@@ -55,7 +55,7 @@ services:
       - CORE_PEER_GOSSIP_ORGLEADER=false
       - CORE_PEER_PROFILE_ENABLED=true
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb0:5984
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb3:5984
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
     depends_on:
@@ -66,8 +66,8 @@ services:
       - /var/run/:/host/var/run/
       - ./crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/msp:/etc/hyperledger/fabric/msp
     # extra_hosts:
-    #- "orderer.example.com:<1st Machines IP>"
-    #- "ca.example.com:<1st Machines IP>"
+    # - "orderer.example.com:<IP of ORG-1 Machine>"
+    # - "ca.example.com:<IP of ORG-1 Machine>"
     ports:
       - 10051:7051
       - 10053:7053      
