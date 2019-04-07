@@ -2,16 +2,6 @@
 
 CHANNEL_NAME="mychannel"
 
-
-# echo "##########################################################"
-# echo "#####     Removing previous docker containers    #########"
-# echo "##########################################################"
-
-# docker kill $(docker ps -aq)
-# docker rm -f $(docker ps -aq)
-
-# sleep 2
-
 echo "##########################################################"
 echo "##### Generate certificates using cryptogen tool #########"
 echo "##########################################################"
@@ -76,14 +66,14 @@ echo "#################################################################"
 echo "#######  Copying Crypto-material to ORG and ORG2       ##########"
 echo "#################################################################"
 
- rm -rf ./../ORG1/crypto-config/
- rm -rf ./../ORG1/channel-artifacts/
+rm -rf ./../ORG1/crypto-config/
+rm -rf ./../ORG1/channel-artifacts/ && mkdir -p ./../ORG1/channel-artifacts
 
- rm -rf ./../ORG2/crypto-config/
- rm -rf ./../ORG2/channel-artifacts/
+rm -rf ./../ORG2/crypto-config/
+rm -rf ./../ORG2/channel-artifacts/ && mkdir -p ./../ORG2/channel-artifacts
 
- cp -r ./crypto-config ./../ORG1/
- cp -r ./channel-artifacts ./../ORG1
+cp -r ./crypto-config/ ./../ORG1/
+cp -r ./channel-artifacts ./../ORG1/
 
- cp -r ./crypto-config ./../ORG2/
- cp -r ./channel-artifacts ./../ORG2
+cp -r ./crypto-config/ ./../ORG2/
+cp -r ./channel-artifacts ./../ORG2/
