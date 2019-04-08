@@ -88,7 +88,6 @@ ___
     ./generate.sh
     ```
    * This scrip will generate certificates required to setup the network.
-   * 
 
 2. Go to the below directory : 
     ```shell
