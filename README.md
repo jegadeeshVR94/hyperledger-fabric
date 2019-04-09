@@ -56,7 +56,7 @@ ___
 
 You can change the values in createCar.sh and query.sh for different result.
 
-For ORG2
+**For ORG2**
 
 8. cd into ORG2 and execute below script:
     ```shell
