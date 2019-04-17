@@ -12,15 +12,15 @@ services:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.example.com
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.example.com-cert.pem
-      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/8f4608d294f2691cabb7171f7c64d759e388a66500b2dc06598d26f21720573a_sk
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/1fda586c1d6c527f7133062eb343dcad99952d27875a238eb066081a2c793c15_sk
     ports:
       - "7054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/org1.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
-    #extra_hosts:
-    #- "peer0.org2.example.com:<IP of ORG-2 Machine>"
-    #- "peer1.org2.example.com:<IP of ORG-2 Machine>"
+    extra_hosts:
+    - "peer0.org2.example.com:10.0.12.81"
+    - "peer1.org2.example.com:10.0.12.81"
     container_name: ca.example.com
     networks:
       - byfn
@@ -40,9 +40,9 @@ services:
     volumes:
     - ./channel-artifacts/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
     - ./crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp:/var/hyperledger/orderer/msp
-    # extra_hosts:
-    # - "peer0.org2.example.com:<IP of Org-2 Machine>"
-    # - "peer1.org2.example.com:<IP of Org-2 Machine>"
+    extra_hosts:
+    - "peer0.org2.example.com:10.0.12.81"
+    - "peer1.org2.example.com:10.0.12.81"
     ports:
       - 7050:7050
     networks:
@@ -74,6 +74,9 @@ services:
       - /var/run/:/host/var/run/
       - ./crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp:/etc/hyperledger/fabric/msp
       - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
+    extra_hosts:
+    - "peer0.org2.example.com:10.0.12.81"
+    - "peer1.org2.example.com:10.0.12.81"
     ports:
       - 7051:7051
       - 7053:7053      
@@ -106,6 +109,9 @@ services:
       - /var/run/:/host/var/run/
       - ./crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/msp:/etc/hyperledger/fabric/msp
       - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
+    extra_hosts:
+    - "peer0.org2.example.com:10.0.12.81"
+    - "peer1.org2.example.com:10.0.12.81"
     ports:
       - 8051:7051
       - 8053:7053      
