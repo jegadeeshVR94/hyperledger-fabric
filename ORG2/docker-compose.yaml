@@ -32,8 +32,8 @@ services:
       - /var/run/:/host/var/run/
       - ./crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/msp:/etc/hyperledger/fabric/msp
     extra_hosts:
-    - "orderer.example.com:"
-    - "ca.example.com:"
+    - "orderer.example.com:<ORG1's machine IP>"
+    - "ca.example.com:<ORG1's machine IP>"
     ports:
       - 9051:7051
       - 9053:7053      
@@ -66,8 +66,8 @@ services:
       - /var/run/:/host/var/run/
       - ./crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/msp:/etc/hyperledger/fabric/msp
     extra_hosts:
-    - "orderer.example.com:"
-    - "ca.example.com:"
+    - "orderer.example.com:<ORG1's machine IP>"
+    - "ca.example.com:<ORG1's machine IP>"
     ports:
       - 10051:7051
       - 10053:7053      
