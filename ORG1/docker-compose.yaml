@@ -19,8 +19,8 @@ services:
     volumes:
       - ./crypto-config/peerOrganizations/org1.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
     extra_hosts:
-    - "peer0.org2.example.com:10.0.12.81"
-    - "peer1.org2.example.com:10.0.12.81"
+    - "peer0.org2.example.com:<IP address of ORG2>"
+    - "peer1.org2.example.com:<IP address of ORG2>"
     container_name: ca.example.com
     networks:
       - byfn
@@ -41,8 +41,8 @@ services:
     - ./channel-artifacts/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
     - ./crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp:/var/hyperledger/orderer/msp
     extra_hosts:
-    - "peer0.org2.example.com:10.0.12.81"
-    - "peer1.org2.example.com:10.0.12.81"
+    - "peer0.org2.example.com:<IP address of ORG2>"
+    - "peer1.org2.example.com:<IP address of ORG2>"
     ports:
       - 7050:7050
     networks:
@@ -75,8 +75,8 @@ services:
       - ./crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp:/etc/hyperledger/fabric/msp
       - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
     extra_hosts:
-    - "peer0.org2.example.com:10.0.12.81"
-    - "peer1.org2.example.com:10.0.12.81"
+    - "peer0.org2.example.com:<IP address of ORG2>"
+    - "peer1.org2.example.com:<IP address of ORG2>"
     ports:
       - 7051:7051
       - 7053:7053      
@@ -110,8 +110,8 @@ services:
       - ./crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/msp:/etc/hyperledger/fabric/msp
       - ./channel-artifacts:/opt/gopath/src/github.com/hyperledger/fabric/peer/channel-artifacts
     extra_hosts:
-    - "peer0.org2.example.com:10.0.12.81"
-    - "peer1.org2.example.com:10.0.12.81"
+    - "peer0.org2.example.com:<IP address of ORG2>"
+    - "peer1.org2.example.com:<IP address of ORG2>"
     ports:
       - 8051:7051
       - 8053:7053      
