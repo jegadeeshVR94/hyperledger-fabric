@@ -12,9 +12,9 @@ This repository demonstrates the Hyperledger Fabric Multi-Organization docker se
 Check [this](https://hyperledger-fabric.readthedocs.io/en/release-1.4/getting_started.html) for more details.
 ___
 ## Understanding different **.yaml** files
-1. [docker-compose.yaml](https://github.com/rushikeshacharya/hyperledger-fabric/blob/HFL-MultiOrgSetup/docs/docker-compose.README.md)
-2. [crypto-config.yaml](https://github.com/rushikeshacharya/hyperledger-fabric/blob/HFL-MultiOrgSetup/docs/crypto-config.README.md)
-3. [configtx.yaml](https://github.com/rushikeshacharya/hyperledger-fabric/blob/HFL-MultiOrgSetup/docs/configtx.README.md)
+1. [docker-compose.yaml](docs/docker-compose.README.md)
+2. [crypto-config.yaml](docs/crypto-config.README.md)
+3. [configtx.yaml](docs/configtx.README.md)
 
 ___
 
