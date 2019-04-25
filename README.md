@@ -4,7 +4,8 @@ This repository demonstrates the Hyperledger Fabric Multi-Organization docker se
 
 ## Pre-requisites:
 * [cURL](https://curl.haxx.se/download.html)
-* [docker](https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-18-04)
+* [docker-compose](https://docs.docker.com/compose/install/)
+* [docker](https://docs.docker.com/v17.09/engine/installation/linux/docker-ce/ubuntu/)
 * [Install Samples, Binaries and Docker Images](https://hyperledger-fabric.readthedocs.io/en/release-1.4/install.html)
 * [Go](https://www.digitalocean.com/community/tutorials/how-to-install-go-on-ubuntu-18-04)
 
