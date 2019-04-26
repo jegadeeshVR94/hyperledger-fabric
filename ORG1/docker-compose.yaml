@@ -18,9 +18,6 @@ services:
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/org1.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
-    #extra_hosts:
-    #- "peer0.org2.example.com:<IP of ORG-2 Machine>"
-    #- "peer1.org2.example.com:<IP of ORG-2 Machine>"
     container_name: ca.example.com
     networks:
       - byfn
@@ -40,9 +37,6 @@ services:
     volumes:
     - ./channel-artifacts/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
     - ./crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp:/var/hyperledger/orderer/msp
-    # extra_hosts:
-    # - "peer0.org2.example.com:<IP of Org-2 Machine>"
-    # - "peer1.org2.example.com:<IP of Org-2 Machine>"
     ports:
       - 7050:7050
     networks:

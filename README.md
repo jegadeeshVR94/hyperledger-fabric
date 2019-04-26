@@ -79,6 +79,10 @@ You can change the values in createCar.sh and query.sh for different result.
     ```shell
     ./query.sh
     ```     
+13. To stop the running containers and to remove the volumes associated with them from your system, execute below script form both the Org's directory
+    ```
+    ./stop.sh
+    ``` 
 ___
 
 ## Network Setup Steps (Generating new certificates)
